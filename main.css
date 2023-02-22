@@ -1,0 +1,203 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    margin: 0 auto;
+    position: relative;
+}
+
+body.hidden {
+    height: 100%;
+    min-height: 100%;
+    overflow: hidden !important;
+    touch-action: none;
+}
+
+.woori-header {
+    position: relative;
+    width: 100%;
+    height: 100px;
+    padding: 1rem 1rem;
+    background-color: whitesmoke;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.woori-header > img {
+    height: 70%;
+}
+
+.woori-header > p {
+    position: absolute;
+    top: 50%;
+    left: 1rem;
+    transform: translateY(-50%);
+    font-size: 1.4rem;
+}
+
+.page-title {
+    width: 100%;
+    height: 90px;
+    padding: 0 1rem;
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+    font-weight: 500;
+    background-color: bisque;
+}
+
+.account-box {
+    width: 100%;
+    background-color: whitesmoke;
+    padding: 0 1.2rem;
+    border-bottom: 1px solid gray;
+}
+
+.account-box-label {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    padding: 1.5rem 0;
+}
+
+.account-box-label > .account-box-label-left {
+    width: 20%;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.account-box-label > .account-box-label-left > .ic-right {
+    transition: all ease 0.5s;
+}
+
+.account-box-label.opened > .account-box-label-left > .ic-right {
+    transform: rotate(0.25turn);
+}
+
+.account-box-content {
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    transition: all ease 0.6s;
+}
+
+.account-box-content > .account-box-content-detail {
+    padding: 1rem 0;
+}
+
+.account-box-label.opened + .account-box-content {
+    max-height: 100vh;
+}
+
+.account-box-detail-box {
+    width: 100%;
+    background-color: white;
+    padding: 1rem 1rem;
+    border-radius: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.account-box-detail-box > .account-box-detail-box-up {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.account-box-detail-box
+    > .account-box-detail-box-up
+    > .account-box-detail-box-up-more {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.account-box-detail-box
+    > .account-box-detail-box-up
+    > .account-box-detail-box-up-left
+    > p {
+    margin-bottom: 0.5rem;
+    color: gray;
+}
+
+.account-box-detail-box > .account-box-detail-middle {
+    width: 100%;
+    text-align: end;
+    margin-bottom: 0.5rem;
+}
+
+.account-box-detail-box > .account-box-detail-box-down {
+    width: 100%;
+    display: flex;
+    gap: 1rem;
+}
+
+.account-box-detail-box > .account-box-detail-box-down > button {
+    width: 100%;
+    height: 2rem;
+    border: none;
+    border-radius: 0.5rem;
+}
+
+.account-box-detail-box > .account-box-detail-box-down > button:last-child {
+    background-color: lightgreen;
+}
+
+footer {
+    width: 100%;
+    padding: 2rem;
+    background-color: whitesmoke;
+}
+
+footer > p {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.example-modal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+}
+
+.example-modal.opened {
+    display: block;
+}
+
+.example-modal > .exmple-modal-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: whitesmoke;
+    border-top-left-radius: 3rem;
+    border-top-right-radius: 3rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 5rem 0;
+    overflow: hidden;
+    animation: modal 0.5s ease;
+}
+
+@keyframes modal {
+    from {
+        transform: translateY(200px);
+    }
+
+    to {
+        transform: translateY(0px);
+    }
+}
